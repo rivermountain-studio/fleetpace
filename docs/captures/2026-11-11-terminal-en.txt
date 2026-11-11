@@ -1,0 +1,23 @@
+Fleetpace report — last 30 days (this computer, nothing leaves it)
+
+  Limit windows hit   9  (weekly 6 · 5-hour 3 · Codex 1)
+  Costliest hit       Weekly limit used up 6d before reset (11/11 06:56)
+  Who burned it       sub-agents 67.6% · top 10% of runs 45.4%
+                      #1 Team A 4.6%  #2 Team B 4.4%  #3 Team C 3.8%
+  Peak concurrency    21 agents (3+ for 183.7h)
+  Fleet fully idle    74.7h (weekday daytime 13.6h)
+  Pace now            Weekly limit hit (one account) — resets 11/12(Thu) 18:00
+                      Weekly limit hit (one account) — resets 11/17(Tue) 07:00
+                      Codex Weekly 10% — runs out 11/12(Thu) 21:18
+                      Codex 5-hour 62% · resets 11/11(Wed) 15:00
+
+  Burn by team (approx., weighted tokens)
+  1  Team A           Opus     51 runs ▓▓▓▓▓▓▓▓▓▓ 4.6%
+  2  Team B           Opus     53 runs ▓▓▓▓▓▓▓▓▓▓ 4.4%
+  3  Team C           Opus     13 runs ▓▓▓▓▓▓▓▓   3.8%
+  4  Team D           Opus     33 runs ▓▓▓▓▓▓▓▓   3.7%
+  5  Team E           Opus     48 runs ▓▓▓▓▓▓     2.9%
+  …  others 473                                   44.3%
+     lead session                                 32.4%
+
+  → Always-on view: tray app coming soon

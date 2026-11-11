@@ -1,0 +1,13 @@
+{
+  "scope": {
+    "claudeFiles": 0,
+    "codexFiles": 0,
+    "found": {
+      "claude": true,
+      "codex": false
+    }
+  },
+  "burn": {
+    "approxTotal": 0
+  }
+}

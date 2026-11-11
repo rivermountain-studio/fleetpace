@@ -1,0 +1,7 @@
+.cache/
+node_modules/
+*.vsix
+fleetpace-report.html
+.DS_Store
+docs/results/
+docs/posts/

@@ -1,0 +1,12 @@
+{
+  "burn": {
+    "approxTotal": 1000,
+    "subPct": 50
+  },
+  "concurrency": {
+    "peak": 1
+  },
+  "idle": {
+    "hours": 717
+  }
+}

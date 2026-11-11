@@ -1,0 +1,94 @@
+{
+  "scope": {
+    "claudeFiles": 6,
+    "codexFiles": 0,
+    "skippedFiles": 0,
+    "unknownLinePct": 0
+  },
+  "limits": {
+    "windows": 2,
+    "weekly": 1,
+    "fiveHour": 1,
+    "codexWindows": 0,
+    "list": [
+      {
+        "src": "claude",
+        "kind": "seven_day",
+        "firstHit": "2026-11-09T10:00:00.000Z",
+        "reset": "2026-11-11T12:00:00.000Z",
+        "leftHours": 50,
+        "hits": 2,
+        "by": "lead"
+      },
+      {
+        "src": "claude",
+        "kind": "five_hour",
+        "firstHit": "2026-11-10T02:00:00.000Z",
+        "reset": "2026-11-10T04:00:00.000Z",
+        "leftHours": 2,
+        "hits": 1,
+        "by": "sub"
+      }
+    ],
+    "worst": {
+      "kind": "seven_day",
+      "leftHours": 50
+    }
+  },
+  "burn": {
+    "approxTotal": 26500,
+    "subPct": 83,
+    "leadPct": 17,
+    "top10Pct": 37.7,
+    "runs": 5,
+    "teams": [
+      {
+        "label": "Green",
+        "pct": 37.7,
+        "runs": 1
+      },
+      {
+        "label": "Red",
+        "pct": 30.2,
+        "runs": 2
+      },
+      {
+        "label": "Blue",
+        "pct": 7.5,
+        "runs": 1
+      },
+      {
+        "label": "Solo",
+        "pct": 7.5,
+        "runs": 1
+      }
+    ],
+    "peakDay": {
+      "day": "2026-11-08",
+      "x": 13
+    }
+  },
+  "concurrency": {
+    "peak": 3,
+    "ge3Hours": 0.5,
+    "runs7d": 5
+  },
+  "idle": {
+    "hours": 710,
+    "pct": 98.6
+  },
+  "pace": {
+    "verdict": "blocked",
+    "claude": {
+      "seven_day": {
+        "state": "blocked",
+        "reset": "2026-11-11T12:00:00.000Z"
+      },
+      "five_hour": {
+        "state": "ok",
+        "estPct": 0
+      },
+      "accountsMixed": false
+    }
+  }
+}

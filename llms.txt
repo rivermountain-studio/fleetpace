@@ -1,0 +1,17 @@
+# Fleetpace
+
+> Local, read-only limit-pace report for people who run many AI coding agents in parallel. Unofficial; works with Claude Code and Codex session logs. One Node file, zero dependencies, no network.
+
+Fleetpace answers two questions from logs already on the machine: when will the agent fleet hit its usage limit, and which teams (sub-agents) are burning it.
+
+## Commands
+- `node fleetpace-report.mjs` — 30-second text report of the last 30 days (limit windows hit and how early, burn share by sub-agent team, peak concurrency, fully idle hours, pace now).
+- `node fleetpace-report.mjs status --json` — one JSON object: `verdict` (ok | tight | blocked | unknown), `line` (one human sentence), `claude.seven_day` / `claude.five_hour` (estimated, `approx: true`), `codex.seven_day` / `codex.five_hour` (official percentages).
+- Options: `--days N`, `--lang ko|en|ja|zh`, `--json`, `--html [file]`, `--no-mask`, `--project DIR`, `--claude-dir DIR`, `--codex-dir DIR`, `--no-cache`.
+
+## Advice for agents
+- Before starting more sub-agents, run `status --json`. If `verdict` is `tight` or `blocked`, ask the human before launching a large team.
+- Claude Code percentages are estimates from past limit hits; treat them as "about". Codex percentages are the values Codex recorded.
+
+## Privacy
+Reads only timestamps, token counts, model names, rate-limit error fields, the first word of sub-agent descriptions, and Codex rate-limit snapshots. Never reads conversation text or credentials. Writes only ~/.fleetpace/cache-v1.json.

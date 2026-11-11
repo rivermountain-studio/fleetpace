@@ -1,0 +1,10 @@
+{
+  "scope": {
+    "claudeFiles": 0,
+    "codexFiles": 0,
+    "found": {
+      "claude": false,
+      "codex": false
+    }
+  }
+}

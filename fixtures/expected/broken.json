@@ -1,0 +1,12 @@
+{
+  "burn": {
+    "approxTotal": 500,
+    "subPct": 0
+  },
+  "limits": {
+    "windows": 0
+  },
+  "scope": {
+    "unknownLinePct": 50
+  }
+}

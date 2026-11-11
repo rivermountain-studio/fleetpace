@@ -1,0 +1,14 @@
+{
+  "burn": {
+    "approxTotal": 1000,
+    "subPct": 50,
+    "runs": 1,
+    "teams": [
+      {
+        "label": "",
+        "pct": 50,
+        "runs": 1
+      }
+    ]
+  }
+}

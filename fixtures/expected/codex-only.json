@@ -1,0 +1,35 @@
+{
+  "scope": {
+    "claudeFiles": 0,
+    "codexFiles": 1,
+    "found": {
+      "claude": false,
+      "codex": true
+    }
+  },
+  "limits": {
+    "windows": 0,
+    "codexWindows": 1,
+    "list": [
+      {
+        "src": "codex",
+        "kind": "five_hour",
+        "leftHours": 4,
+        "hits": 1
+      }
+    ]
+  },
+  "pace": {
+    "verdict": "blocked",
+    "codex": {
+      "five_hour": {
+        "state": "blocked",
+        "pct": 100
+      },
+      "seven_day": {
+        "state": "ok",
+        "pct": 80
+      }
+    }
+  }
+}
