@@ -9,6 +9,10 @@ Fleetpace answers two questions from logs already on the machine: when will the 
 - `node fleetpace-report.mjs status --json` — one JSON object: `verdict` (ok | tight | blocked | unknown), `line` (one human sentence), `claude.seven_day` / `claude.five_hour` (estimated, `approx: true`), `codex.seven_day` / `codex.five_hour` (official percentages).
 - Options: `--days N`, `--lang ko|en|ja|zh`, `--json`, `--html [file]`, `--no-mask`, `--project DIR`, `--claude-dir DIR`, `--codex-dir DIR`, `--no-cache`.
 
+## Claude Code plugin
+- Install: `claude plugin marketplace add rivermountain-studio/fleetpace` then `claude plugin install fleetpace@rivermountain-studio`.
+- Skills: `/fleetpace:report` (text report) and `/fleetpace:status` (status --json). No hooks, no MCP server, no network.
+
 ## Advice for agents
 - Before starting more sub-agents, run `status --json`. If `verdict` is `tight` or `blocked`, ask the human before launching a large team.
 - Claude Code percentages are estimates from past limit hits; treat them as "about". Codex percentages are the values Codex recorded.

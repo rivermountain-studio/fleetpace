@@ -22,6 +22,26 @@ node fleetpace-report.mjs status --json   # pace right now, one JSON object (for
 
 Needs Node 18+. No install, no dependencies, no network.
 
+## Use it as a Claude Code plugin
+
+```
+/plugin install fleetpace --marketplace rivermountain-studio/fleetpace
+```
+
+Or from your shell:
+
+```
+claude plugin marketplace add rivermountain-studio/fleetpace
+claude plugin install fleetpace@rivermountain-studio
+```
+
+Then, inside Claude Code:
+
+- `/fleetpace:report` — the 30-day report (`/fleetpace:report --lang ko`, `--days 7`, `--html`)
+- `/fleetpace:status` — pace right now as JSON. Claude also uses it on its own before starting a large team of sub-agents, and asks you first if the verdict is `tight` or `blocked`.
+
+The plugin is two skills that run the same `engine-node/fleetpace-report.mjs` file shown above. It adds no hooks, no MCP server and no network access, and keeps names masked unless you ask for `--no-mask`. Remove it with `claude plugin uninstall fleetpace@rivermountain-studio`.
+
 ## What it reads and what it never reads
 
 | Reads | Never reads |
@@ -59,6 +79,26 @@ node fleetpace-report.mjs status --json   # 지금 페이스 한 덩어리 (스�
 ```
 
 Node 18 이상. 설치·의존성·네트워크 없음.
+
+## Claude Code 플러그인으로 쓰기
+
+```
+/plugin install fleetpace --marketplace rivermountain-studio/fleetpace
+```
+
+터미널에서는:
+
+```
+claude plugin marketplace add rivermountain-studio/fleetpace
+claude plugin install fleetpace@rivermountain-studio
+```
+
+Claude Code 안에서:
+
+- `/fleetpace:report` — 30일 리포트 (`/fleetpace:report --lang ko`, `--days 7`, `--html`)
+- `/fleetpace:status` — 지금 페이스 JSON. 하위 에이전트를 여럿 띄우기 전에 Claude 가 스스로 보고, `tight`·`blocked` 이면 먼저 묻습니다.
+
+플러그인은 위의 같은 `engine-node/fleetpace-report.mjs` 를 돌리는 스킬 2개뿐입니다. 훅·MCP 서버·네트워크를 더하지 않고, `--no-mask` 를 직접 말하지 않으면 이름을 가립니다. 지우기: `claude plugin uninstall fleetpace@rivermountain-studio`.
 
 ## 읽는 것 / 절대 안 읽는 것
 

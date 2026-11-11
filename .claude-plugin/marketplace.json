@@ -1,0 +1,15 @@
+{
+  "name": "rivermountain-studio",
+  "description": "Small local tools from River Mountain Studio",
+  "owner": {
+    "name": "River Mountain Studio",
+    "url": "https://github.com/rivermountain-studio"
+  },
+  "plugins": [
+    {
+      "name": "fleetpace",
+      "source": "./",
+      "description": "Local limit-pace report for Claude Code and Codex agent fleets"
+    }
+  ]
+}

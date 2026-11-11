@@ -108,3 +108,19 @@ test('engine has no network or process modules and stays under 900 lines', () =>
   assert.ok(!/node:(http|https|net|dgram|tls|dns|child_process)|fetch\(|XMLHttpRequest/.test(src));
   assert.ok(src.split('\n').length < 900);
 });
+
+test('codex: a projected run-out time that already passed is not reported as tight', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'fleetpace-stale-'));
+  const iso = (h) => new Date((NOW + h * 3600) * 1000).toISOString();
+  const line = (h, p) => JSON.stringify({ timestamp: iso(h), type: 'event_msg', payload: { type: 'token_count', info: null,
+    rate_limits: { primary: { used_percent: p, window_minutes: 300, resets_at: NOW + 2 * 3600 }, secondary: { used_percent: 10, window_minutes: 10080, resets_at: NOW + 100 * 3600 }, rate_limit_reached_type: null } } });
+  const f = path.join(dir, 'codex/sessions/2026/11/10/rollout-2026-11-10T09-00-00-y.jsonl');
+  fs.mkdirSync(path.dirname(f), { recursive: true });
+  // 5% -> 45% in 30 minutes, then silence: at that pace 100% would have come about 41 minutes later, i.e. before NOW
+  fs.writeFileSync(f, [line(-2, 5), line(-1.5, 45)].join('\n') + '\n');
+  const r = run(opts('x', { claudeDir: path.join(dir, 'none'), codexDir: path.join(dir, 'codex/sessions') }));
+  const s = statusObject(r, 'en');
+  assert.equal(s.codex.five_hour.pct, 45);
+  assert.equal(s.codex.five_hour.state, 'ok');
+  assert.equal(s.codex.five_hour.exhaustAt, null);
+});

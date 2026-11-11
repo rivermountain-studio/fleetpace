@@ -1,0 +1,20 @@
+{
+  "name": "fleetpace",
+  "displayName": "Fleetpace",
+  "version": "0.1.0",
+  "description": "Local, read-only usage-limit pace report for people who run many Claude Code and Codex agents at once: when the fleet will hit its limit, and which sub-agent teams are burning it. No network, never reads conversation text.",
+  "author": {
+    "name": "River Mountain Studio",
+    "url": "https://github.com/rivermountain-studio"
+  },
+  "license": "MIT",
+  "keywords": [
+    "usage-limit",
+    "rate-limit",
+    "sub-agents",
+    "multi-agent",
+    "codex",
+    "local",
+    "privacy"
+  ]
+}

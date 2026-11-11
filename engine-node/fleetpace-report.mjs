@@ -554,6 +554,7 @@ function pace(states, windows, now) {
     const pts = states.filter((s) => s.kind === 'codex').flatMap((s) => (s.series[kind] || [])).filter((p) => p[0] >= now - 3 * H && Math.abs(p[2] - v.reset) < 600).sort((a, b) => a[0] - b[0]);
     let exhaustAt = null;
     if (pts.length >= 2) { const [a, b] = [pts[0], pts[pts.length - 1]]; const slope = (b[1] - a[1]) / Math.max(1, b[0] - a[0]); if (slope > 0) exhaustAt = b[0] + (100 - b[1]) / slope; }
+    if (exhaustAt !== null && exhaustAt <= now) exhaustAt = null; // projected time already passed without reaching 100%: Codex went quiet, the old pace no longer applies
     const tight = exhaustAt !== null && v.reset && exhaustAt < v.reset;
     out.codex[kind] = { state: v.pct >= 100 && v.reset > now ? 'blocked' : tight ? 'tight' : 'ok', pct: Math.round(v.pct), reset: iso(v.reset), exhaustAt: iso(exhaustAt), asOf: iso(cx.snap.t), approx: false };
   }
