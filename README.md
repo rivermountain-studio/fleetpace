@@ -2,6 +2,19 @@
 
 **When will my agents hit the limit, and who is burning it?** A one-file, local report for people who run many AI coding agents at once. Works with Claude Code and Codex logs (unofficial, not affiliated with Anthropic or OpenAI).
 
+![Fleetpace report card: limit windows hit, costliest hit, who burned it, peak concurrency, pace now](docs/captures/2026-11-11-card-en.png)
+
+*A real report from our own studio (one person + about 20 Claude Code / Codex agents at peak). Team names are masked by default.*
+
+<details>
+<summary>Also in 한국어 · 日本語 · 中文</summary>
+
+![한국어](docs/captures/2026-11-11-card-ko.png)
+![日本語](docs/captures/2026-11-11-card-ja.png)
+![中文](docs/captures/2026-11-11-card-zh.png)
+
+</details>
+
 ```
 node fleetpace-report.mjs            # 30-second report of the last 30 days
 node fleetpace-report.mjs status --json   # pace right now, one JSON object (for scripts and lead agents)
